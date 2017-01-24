@@ -5,21 +5,20 @@ const assert = require('chai').assert;
 const transform = require('../');
 
 describe('vuegister-plugin-babel', () => {
-  it('transform', () => {
-    let origFile = __dirname + '/fixtures/original.js';
-    let genFile = __dirname + '/fixtures/generated.js';
-    let original = fs.readFileSync(origFile, 'utf8');
-    let generated = fs.readFileSync(genFile, 'utf8');
-    let result = transform({content: original}, origFile, {sourceMaps: false});
+  let file = (name) => {
+    return fs.readFileSync(__dirname + '/fixtures/' + name, 'utf8');
+  };
 
-    assert.strictEqual(result, generated);
+  it('transform', () => {
+    let generated = transform(file('original.js'), {});
+
+    assert.strictEqual(generated, file('generated.js'));
   });
 
   it('source map', () => {
-    let origFile = __dirname + '/fixtures/original.js';
-    let original = fs.readFileSync(origFile, 'utf8');
-    let result = transform({content: original}, origFile, {sourceMaps: true});
+    let map = '//# sourceMappingURL=data:application/json;base64';
+    let generated = transform(file('original.js'), {maps: true});
 
-    assert.include(result, '//# sourceMappingURL=data:application/json');
+    assert.include(generated, map);
   });
 });
