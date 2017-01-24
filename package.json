@@ -1,0 +1,38 @@
+{
+  "name": "vuegister-plugin-babel",
+  "description": "Vuegister plugin for Babel.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Aleksei Iatsiuk <a.v.iatsiuk@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iatsiuk/vuegister-plugin-babel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iatsiuk/vuegister-plugin-babel/issues"
+  },
+  "homepage": "https://github.com/iatsiuk/vuegister-plugin-babel",
+  "devDependencies": {
+    "chai": "*",
+    "eslint": "^3.13.1",
+    "eslint-config-google": "^0.7.1",
+    "mocha": "*"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint --ext .js .",
+    "test": "./node_modules/.bin/mocha"
+  },
+  "keywords": [
+    "vuegister",
+    "plugin",
+    "babel"
+  ],
+  "engines": {
+    "node": ">=4.7.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.21.0",
+    "babel-preset-env": "^1.1.8",
+    "vuegister": "^0.0.4"
+  }
+}
