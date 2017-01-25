@@ -1,0 +1,15 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [
+    "data",
+    "msg"
+  ],
+  "mappings": ";;;;;kBAAe;AACbA,SAAQ;AACN,WAAO;AACLC,WAAK;AADA,KAAP;AAGD;AALY,C",
+  "file": "unknown",
+  "sourcesContent": [
+    "export default {\n  data () {\n    return {\n      msg: 'Hello world!'\n    }\n  }\n}\n"
+  ]
+}

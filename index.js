@@ -14,16 +14,21 @@ const generateMap = require('vuegister').generateSourceMap;
  *    maps: boolean,     // false, provide source map
  *    mapOffset: number, // 0, map offset
  *    debug: boolean,    // false, print debug
- *    plugins: object,   // {}, Babel options
+ *    extra: object,     // {}, Babel options
  * }
- * @return {string} - Returns transpiled JavaScript code.
+ * @return {object} - Returns transpiled code, an object of the
+ * following format:
+ * {
+ *    code: string, // transpiled JavaScript
+ *    map: object,  // generated source map
+ * }
  */
 module.exports = (code, opts) => {
   let cfg = {
     babelrc: false,
     ast: false,
     sourceFileName: opts.file,
-    sourceMaps: opts.maps ? 'inline' : false,
+    sourceMaps: opts.maps,
     inputSourceMap: null,
     presets: [
       ['env', {
@@ -36,7 +41,7 @@ module.exports = (code, opts) => {
   if (opts.mapOffset > 0) {
     cfg.inputSourceMap = generateMap(code, opts.file, opts.mapOffset);
   }
-  Object.assign(cfg, opts.babel);
+  Object.assign(cfg, opts.extra);
 
   let transformed;
 
@@ -49,5 +54,5 @@ module.exports = (code, opts) => {
     process.exit(1);
   }
 
-  return transformed.code;
+  return {code: transformed.code, map: transformed.map};
 };
