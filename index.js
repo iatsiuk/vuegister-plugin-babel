@@ -1,28 +1,8 @@
 'use strict';
 
 const babel = require('babel-core');
-const generateMap = require('vuegister').generateSourceMap;
+const generateMap = require('vuegister')._.generateSourceMap;
 
-/**
- * Transforms given code to the JavaScript.
- *
- * @function transform
- * @param {string} code - Code for transformation.
- * @param {object} opts - Options, an object of the following format:
- * {
- *    file: string,      // 'unknown', file name
- *    maps: boolean,     // false, provide source map
- *    mapOffset: number, // 0, map offset
- *    debug: boolean,    // false, print debug
- *    extra: object,     // {}, Babel options
- * }
- * @return {object} - Returns transpiled code, an object of the
- * following format:
- * {
- *    code: string, // transpiled JavaScript
- *    map: object,  // generated source map
- * }
- */
 module.exports = (code, opts) => {
   let cfg = {
     babelrc: false,
@@ -33,7 +13,6 @@ module.exports = (code, opts) => {
     presets: [
       ['env', {
         targets: {node: 'current'},
-        debug: opts.debug,
       }],
     ],
   };
