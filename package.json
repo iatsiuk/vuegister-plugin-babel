@@ -1,7 +1,7 @@
 {
   "name": "vuegister-plugin-babel",
   "description": "Vuegister plugin for Babel.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "Aleksei Iatsiuk <a.v.iatsiuk@gmail.com>",
   "repository": {
@@ -33,6 +33,6 @@
   "dependencies": {
     "babel-core": "^6.21.0",
     "babel-preset-env": "^1.1.8",
-    "vuegister": "*"
+    "vuegister": "~0.1"
   }
 }
