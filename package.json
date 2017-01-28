@@ -33,6 +33,6 @@
   "dependencies": {
     "babel-core": "^6.21.0",
     "babel-preset-env": "^1.1.8",
-    "vuegister": "*"
+    "vuegister": "~0.1"
   }
 }
