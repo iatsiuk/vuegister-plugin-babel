@@ -1,0 +1,18 @@
+{
+  "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = {\n  data() {\n    return {\n      msg: 'Hello world!'\n    };\n  }\n};",
+  "map": {
+    "version": 3,
+    "sources": [
+      "original.js"
+    ],
+    "names": [
+      "export",
+      "default",
+      "data",
+      "return",
+      "msg",
+      "Hello world!"
+    ],
+    "mappings": ";;;;;;AAME,AAAK,AAAC,SAAE;AACN;AACE,AAAG,WAAE,AACP,AACF;AAHS;AAIX;AANe"
+  }
+}
