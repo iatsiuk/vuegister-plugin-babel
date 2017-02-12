@@ -10,7 +10,7 @@ let dir = __dirname + '/fixtures/';
 
 describe('vuegister-plugin-babel', () => {
   it('transform', () => {
-    let generated = transform(file('original.js'), {}).code;
+    let generated = transform(file('original.js'), {}).data;
 
     assert.strictEqual(generated, file('generated.js'));
   });
@@ -39,13 +39,9 @@ describe('vuegister-plugin-babel', () => {
 function file(name, scope) {
   let data = fs.readFileSync(dir + name, 'utf8');
 
-  if (scope) {
-    data = template(data, scope);
-  }
+  if (scope) data = template(data, scope);
 
-  return path.extname(name) === '.json' ?
-          JSON.parse(data) :
-          data;
+  return path.extname(name) === '.json' ? JSON.parse(data) : data;
 }
 
 // simple template engine
@@ -55,9 +51,7 @@ function template(str, scope) {
     p2 = p2.trim();
 
     if (Object.prototype.hasOwnProperty.call(scope, p2)) {
-      return typeof scope[p2] === 'function' ?
-            scope[p2]() :
-            scope[p2];
+      return typeof scope[p2] === 'function' ? scope[p2]() : scope[p2];
     }
 
     return p1;
