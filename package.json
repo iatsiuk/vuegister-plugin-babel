@@ -21,8 +21,8 @@
   },
   "scripts": {
     "lint": "eslint --ext .js .",
-    "test": "mocha",
-    "coverage": "nyc --report-dir .coverage mocha"
+    "test": "mocha test/*.test.js",
+    "coverage": "nyc --report-dir .coverage mocha test/*.test.js"
   },
   "keywords": [
     "vuegister",
@@ -35,6 +35,6 @@
   "dependencies": {
     "babel-core": "^6.21.0",
     "babel-preset-env": "^1.1.8",
-    "vuegister": "~0.1"
+    "vuegister": "~0.2"
   }
 }

@@ -20,7 +20,7 @@ const generateMap = require('vuegister')._generateMap;
  * @return {object} Returns the following object:
  * ```js
  * {
- *   code: string, // transpiled code, JavaScript
+ *   data: string, // transpiled code, JavaScript
  *   map: object,  // generated source map
  * }
  * ```
@@ -47,5 +47,5 @@ module.exports = (code, opts) => {
 
   let transformed = babel.transform(code, cfg);
 
-  return {code: transformed.code, map: transformed.map};
+  return {data: transformed.code, map: transformed.map};
 };
