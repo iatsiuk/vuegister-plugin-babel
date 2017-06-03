@@ -15,7 +15,7 @@
   "devDependencies": {
     "chai": "*",
     "eslint": "^3.13.1",
-    "eslint-config-google": "^0.7.1",
+    "eslint-config-google": "^0.8.0",
     "mocha": "*",
     "nyc": "^11.0.1"
   },
