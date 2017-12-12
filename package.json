@@ -14,7 +14,7 @@
   "homepage": "https://github.com/iatsiuk/vuegister-plugin-babel",
   "devDependencies": {
     "chai": "*",
-    "eslint": "^3.13.1",
+    "eslint": "^4.13.1",
     "eslint-config-google": "^0.9.0",
     "mocha": "*",
     "nyc": "^11.0.1"
